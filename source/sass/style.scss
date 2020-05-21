@@ -1,0 +1,17 @@
+@import "normalize";
+@import "base/base.scss";
+@import "base/fonts.scss";
+@import "base/btn.scss";
+@import "grid/smart-grid.scss";
+@import "mixins/wrapper.scss";
+@import "mixins/overlay.scss";
+@import "mixins/modal";
+@import "../blocks/page/page.scss";
+@import "../blocks/page-header/page-header.scss";
+@import "../blocks/main-nav/main-nav.scss";
+@import "../blocks/user-menu/user-menu";
+@import "../blocks/catalog/catalog.scss";
+@import "../blocks/card/card";
+@import "../blocks/page-footer/page-footer.scss";
+@import "../blocks/social/social.scss";
+@import "../blocks/full-card/full-card";

@@ -1,0 +1,154 @@
+.full-card__content {
+  @include col();
+  @include size(12);
+
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.full-card__gallery {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  width: 282px;
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
+  list-style: none;
+  font-size: 0;
+
+  & > li:nth-child(1),
+  & > li:nth-child(4n + 2) {
+    margin-left: 0;
+  }
+
+  & > li {
+    margin-left: 6px;
+  }
+
+  & > li:not(:nth-child(1)) {
+    width: 66px;
+    margin-top: 5px;
+  }
+}
+
+.full-card__wrapper {
+  padding: 15px;
+  padding-top: 20px;
+}
+
+.full-card h2 {
+  margin: 0;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #00a2dd;
+}
+
+.full-card p {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: #0d3351;
+
+  & > b {
+    font-weight: 600;
+  }
+
+  & > span {
+    display: none;
+    margin-top: 10px;
+  }
+}
+
+.full-card .full-card__price {
+  margin-top: 30px;
+  font-family: "Roboto Slab", serif;
+  font-size: 30px;
+  line-height: 48px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.full-card__buy-btn {
+  width: 100%;
+  margin-top: 10px;
+
+  &:not([href]) {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}
+
+.full-card__close-btn {
+  width: 100%;
+  margin-top: 10px;
+  background-color: gray;
+
+  &:hover {
+    opacity: 0.3;
+  }
+
+  &:active {
+    opacity: 0.1;
+  }
+}
+
+@media (min-width: 750px) {
+  .full-card__content {
+    flex-wrap: nowrap;
+    justify-content: unset;
+    padding-top: 100px;
+    padding-right: 30px;
+    padding-bottom: 75px;
+    padding-left: 65px;
+  }
+
+  .full-card__gallery {
+    margin-right: 30px;
+    padding-top: 0;
+  }
+
+  .full-card__wrapper {
+    padding: 0;
+  }
+
+  .full-card p {
+    & > span {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 1170px) {
+  .full-card__content {
+    width: 850px;
+    padding-top: 65px;
+    padding-right: 50px;
+    padding-bottom: 45px;
+    padding-left: 50px;
+  }
+
+  .full-card h2 {
+    margin-bottom: 30px;
+  }
+
+  .full-card__gallery {
+    width: 360px;
+
+    & > li {
+
+      margin-left: 9px;
+
+      &:not(:nth-child(1)) {
+        width: 83px;
+        margin-top: 7px;
+      }
+    }
+  }
+}

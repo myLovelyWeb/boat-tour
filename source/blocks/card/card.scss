@@ -1,0 +1,143 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+  padding-bottom: 10px;
+  background-color: #ffffff;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: -7px;
+    right: 23px;
+    width: 89px;
+    height: 101px;
+    background-repeat: no-repeat;
+  }
+
+  &--hit {
+    &::after {
+      background-image: url("../img/hit.png");
+    }
+  }
+
+  &--promo {
+    &::after {
+      background-image: url("../img/promo.png");
+    }
+  }
+
+  &--discount {
+    &::after {
+      background-image: url("../img/discount.png");
+    }
+  }
+}
+
+.card__img-wrapper {
+  margin: 0;
+  font-size: 0;
+  background-color: #e1e1e1;
+}
+
+.card__wrapper {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  padding-left: 20px;
+}
+
+.card__title {
+  margin: 0;
+  margin-top: 25px;
+  padding-right: 25px;
+  text-align: left;
+
+  & > a {
+    position: relative;
+    font-family: "Roboto Slab", serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #00a2dd;
+
+    &:not([href]) {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    &:hover {
+      opacity: 0.3;
+    }
+
+    &:active {
+      opacity: 0.1;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      right: -15px;
+      bottom: 6px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 4px 0 4px 5px;
+      border-color: transparent transparent transparent #33c7fd;
+    }
+  }
+}
+
+.card__info {
+  width: 100%;
+  margin: 0;
+  margin-top: 5px;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: left;
+  color: #0d3351;
+
+  & > b {
+      font-weight: 600;
+  }
+}
+
+.card__price {
+  width: 100%;
+  margin: 0;
+  margin-top: 10px;
+  font-family: "Roboto Slab", serif;
+  font-size: 30px;
+  line-height: 48px;
+  font-weight: 400;
+  text-align: left;
+  color: #0d3351;
+}
+
+.card__price > s {
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  line-height: 48px;
+  font-weight: 400;
+  color: #0d3351;
+  opacity: 0.55;
+}
+
+@media (min-width: 750px) {
+  .card__wrapper {
+    padding-left: 35px;
+  }
+}
+
+@media (min-width: 1170px) {
+  .card__wrapper {
+    padding-left: 40px;
+  }
+
+  .card__info > br {
+    display: none;
+  }
+}

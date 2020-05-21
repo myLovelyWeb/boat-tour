@@ -1,0 +1,153 @@
+.page-header {
+  position: relative;
+  height: 583px;
+  padding-top: 110px;
+  padding-right: 0;
+  padding-left: 0;
+  text-align: center;
+  background-image: url("../img/page-header--tablet.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.page-header__logo {
+  position: absolute;
+  content: "";
+  top: 25px;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  transform: translateX(-50%);
+}
+
+.page-header__text {
+  display: block;
+  max-width: 290px;
+  margin: 0;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 20px;
+  line-height: 48px;
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  color: #0d3351;
+}
+
+.page-header__text > span {
+  display: block;
+  font-size: 50px;
+  text-transform: uppercase;
+}
+
+.page-header__link {
+  position: absolute;
+  content: "";
+  left: 50%;
+  bottom: 208px;
+  width: 202px;
+  transform: translateX(-50%);
+
+  &:not([href]) {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 70px;
+    left: 50%;
+    width: 48px;
+    height: 222px;
+    transform: translateX(-50%);
+    background-image: url("../img/vertical-line--mobile.png");
+    background-repeat: no-repeat;
+  }
+}
+
+.page-header__support {
+  display: none;
+}
+
+@media (min-width: 750px) {
+  .page-header {
+    height: 600px;
+    padding-top: 35px;
+  }
+
+  .page-header__support {
+    display: block;
+    margin: 0;
+    margin-left: 20px;
+    font-family: "Raleway", sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: #0d3351;
+  }
+
+  .page-header__support > a {
+    display: block;
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0d3351;
+  }
+
+  .page-header__logo {
+    display: block;
+    position: static;
+    margin-top: 85px;
+    margin-right: auto;
+    margin-left: auto;
+    transform: unset;
+  }
+
+  .page-header__text {
+    max-width: unset;
+    margin-top: 5px;
+    font-size: 26px;
+  }
+
+  .page-header__text > span {
+    font-size: 64px;
+    line-height: 58px;
+  }
+
+  .page-header__link {
+    display: block;
+    position: relative;
+    bottom: unset;
+    left: unset;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    transform: unset;
+  }
+}
+
+@media (min-width: 1170px) {
+  .page-header {
+    height: 647px;
+    background-image: url("../img/page-header--desktop.jpg");
+  }
+
+  .page-header__logo {
+    margin-top: 20px;
+  }
+
+  .page-header__text {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .page-header__text > span {
+    font-size: 100px;
+    line-height: 136px;
+  }
+
+  .page-header__link::after {
+    width: 58px;
+    height: 274px;
+    background-image: url("../img/vertical-line--desktop.png");
+  }
+}

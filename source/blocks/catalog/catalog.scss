@@ -1,0 +1,148 @@
+.catalog {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.catalog__title {
+  margin: 0;
+  font-family: "Roboto Slab", serif;
+  font-size: 20px;
+  line-height: 48px;
+  font-weight: 400;
+  text-align: center;
+  color: #0d3351;
+}
+
+.catalog__text {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+  color: #0d3351;
+
+  & > a {
+    position: relative;
+    font-style: italic;
+    text-decoration: none;
+
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: 4px;
+      right: -18px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 4px 0 4px;
+      border-color: #0d3451 transparent transparent transparent;
+    }
+  }
+}
+
+.catalog__list {
+  @include row-flex();
+
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 25px;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+
+  & > li {
+    width: 290px;
+    margin-top: 20px;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+}
+
+.catalog__card {
+  height: 100%;
+}
+
+.catalog__more-cards {
+  width: 202px;
+  margin-top: 20px;
+  padding-right: 50px;
+  padding-left: 40px;
+
+  &:not([href]) {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  & > span {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: 4px;
+      right: -20px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 4px 0;
+      border-color: #ffffff transparent transparent;
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .catalog {
+    padding-bottom: 60px;
+  }
+
+  .catalog__title {
+    font-size: 26px;
+  }
+
+  .catalog__list {
+    margin-top: 10px;
+
+    & > li {
+      width: 345px;
+      margin-top: 25px;
+    }
+  }
+
+  .catalog__more-cards {
+    margin-top: 25px;
+  }
+}
+
+@media (min-width: 1170px) {
+  .catalog__title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .catalog__list {
+    display: grid;
+    grid-template-rows: 310px;
+    grid-template-columns: 555px 555px;
+    grid-row-gap: 20px;
+    grid-column-gap: 30px;
+    margin-top: 35px;
+
+    & > li {
+      width: unset;
+      margin-top: 0;
+      margin-right: 0;
+      margin-left: 0;
+
+      &:first-child {
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+
+      &:last-child {
+      display: block;
+      }
+    }
+  }
+}

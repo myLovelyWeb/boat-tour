@@ -1,0 +1,62 @@
+@media (min-width: 750px) {
+  .user-menu {
+    list-style: none;
+  }
+
+  .user-menu__link {
+    display: block;
+    position: relative;
+    margin: 0 20px;
+    padding: 0 20px;
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #0d3351;
+
+    &:not([href]) {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background-repeat: no-repeat;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: 5px;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 4px 0;
+      border-color: #0d3451 transparent transparent;
+    }
+
+    &--user {
+      &::before {
+        width: 10px;
+        height: 12px;
+        background-image: url("../img/icon-user.png");
+      }
+    }
+
+    &--currency-ruble {
+      &::before {
+        width: 10px;
+        height: 12px;
+        background-image: url("../img/icon-ruble.png");
+      }
+    }
+
+    &--lang {
+      padding-left: 0;
+    }
+  }
+}

@@ -1,0 +1,159 @@
+.main-nav__toggle {
+  position: absolute;
+  content: "";
+  top: 27px;
+  left: 20px;
+  width: 22px;
+  height: 16px;
+  padding: 0;
+  border: none;
+  z-index: 2;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:hover {
+    opacity: 0.3;
+  }
+
+  &:active {
+    opacity: 0.1;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 2px;
+    background-color: #0d3351;
+    box-shadow: 0 8px 0 0 #0d3351, 0 16px 0 0 #0d3351;
+  }
+}
+
+.main-nav--opened > .main-nav__toggle {
+  top: 16px;
+  width: 22px;
+  height: 22px;
+
+  &::before {
+    box-shadow: unset;
+    transform: rotate(45deg);
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    top: 10px;
+    right: 0;
+    left: 0;
+    height: 3px;
+    background-color: #ffffff;
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+.main-nav__page-list,
+.main-nav__user-menu {
+  display: none;
+  margin: 0;
+  list-style: none;
+}
+
+.main-nav__page-list {
+  padding-right: 50px;
+  padding-left: 50px;
+  background-color: #0d3351;
+  z-index: 1;
+}
+
+.main-nav--opened .main-nav__page-list {
+  display: block;
+}
+
+.main-nav__page-list a {
+  display: block;
+  padding: 20px;
+  font-family: "Roboto Slab", serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+
+  &:not([href]) {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}
+
+.main-nav--no-js > .main-nav__toggle {
+  display: none;
+}
+
+.main-nav--no-js .main-nav__page-list {
+  display: block;
+}
+
+@media (max-width: 749px) {
+  .main-nav--opened > .main-nav__top,
+  .main-nav--no-js > .main-nav__top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 750px) {
+  .main-nav {
+    position: relative;
+  }
+
+  .main-nav__top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .main-nav__user-menu {
+    display: flex;
+    padding: 0;
+  }
+
+  .main-nav__page-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 420px;
+    padding-top: 40px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+    padding-left: 45px;
+  }
+
+  .main-nav__toggle {
+    top: 3px;
+    left: 0;
+  }
+
+  .main-nav--opened > .main-nav__toggle {
+    top: 0;
+  }
+
+  .main-nav__page-list a {
+    padding-top: 15px;
+    padding-right: 0;
+    padding-bottom: 15px;
+    padding-left: 0;
+    text-align: left;
+  }
+}
