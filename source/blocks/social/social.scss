@@ -33,6 +33,15 @@
     pointer-events: none;
   }
 
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
   & > svg {
     fill: #ffffff;
   }
@@ -52,7 +61,7 @@
     height: 18px;
   }
 
-  &--insta > svg {
+  &--twitter > svg {
     width: 14px;
     height: 14px;
   }

@@ -754,6 +754,10 @@ input[type="radio"].visually-hidden {
   .social__link:not([href]) {
     opacity: 0.3;
     pointer-events: none; }
+  .social__link:hover, .social__link:focus {
+    opacity: 0.8; }
+  .social__link:active {
+    opacity: 0.6; }
   .social__link > svg {
     fill: #ffffff; }
   .social__link--vk > svg {
@@ -765,7 +769,7 @@ input[type="radio"].visually-hidden {
   .social__link--yt > svg {
     width: 14px;
     height: 18px; }
-  .social__link--insta > svg {
+  .social__link--twitter > svg {
     width: 14px;
     height: 14px; }
 
